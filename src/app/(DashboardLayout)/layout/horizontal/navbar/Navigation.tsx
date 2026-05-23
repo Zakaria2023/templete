@@ -53,16 +53,16 @@ const Navigation = () => {
                     </p>
                     {/* pt-2 bridges the visual gap so the group-hover stays active */}
                     <div
-                      className={`absolute left-0 rtl:right-0 top-full pt-2 hidden group-hover/navitem:block z-50 ${item.column == 4 ? "w-screen max-w-[800px]" : "w-52"}`}
+                      className={`absolute left-0 rtl:right-0 top-full pt-2 hidden group-hover/navitem:block z-50 ${(item as any).column == 4 ? "w-screen max-w-[800px]" : "w-52"}`}
                     >
                       <div className="bg-white dark:bg-dark rounded-md shadow-lg">
                         <ul
-                          className={`p-3 text-sm gap-2 ${item.column == 4 ? "two-cols" : "flex flex-col"}`}
+                          className={`p-3 text-sm gap-2 ${(item as any).column == 4 ? "two-cols" : "flex flex-col"}`}
                         >
                           {item.children.map((child) => (
                             <li
                               key={child.id}
-                              className={`${item.column == 4 ? "mb-2" : ""}`}
+                              className={`${(item as any).column == 4 ? "mb-2" : ""}`}
                             >
                               <ChildComponent
                                 item={child}
